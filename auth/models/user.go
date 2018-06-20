@@ -13,7 +13,7 @@ type User struct {
 	Email         string    `orm:"size(64);unique" form:"Email" valid:"Required;Email"`
 	Password      string    `orm:"size(32)" form:"Password" valid:"Required;MinSize(6)"`
 	Repassword    string    `orm:"-" form:"Repassword" valid:"Required"`
-	Lastlogintime time.Time `orm:"type(datetime);null" form:"-"`
+	Lastlogintime time.Time `orm:"type(datetime)" form:"-"`
 	Created       time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated       time.Time `orm:"auto_now;type(datetime)"`
 }

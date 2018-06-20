@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"html/template"
+	"time"
 
 	"github.com/astaxie/beego"
 
@@ -78,6 +79,7 @@ func (c *LoginController) Signup() {
 		return
 	}
 
+	u.Lastlogintime = time.Unix(0, 0)
 	id, err := lib.SignupUser(u)
 	if err != nil || id < 1 {
 		flash.Warning(err.Error())
