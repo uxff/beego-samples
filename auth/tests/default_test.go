@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"testing"
 
-	_ "github.com/ikeikeikeike/beego-samples/auth/routers"
+	_ "github.com/uxff/beego-samples/auth/routers"
 
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"

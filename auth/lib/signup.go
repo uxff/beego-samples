@@ -3,7 +3,7 @@ package lib
 import (
 	"errors"
 
-	"github.com/ikeikeikeike/beego-samples/auth/models"
+	"github.com/uxff/beego-samples/auth/models"
 	"github.com/ikeikeikeike/gopkg/convert"
 )
 

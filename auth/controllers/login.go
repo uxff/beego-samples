@@ -5,8 +5,8 @@ import (
 
 	"github.com/astaxie/beego"
 
-	"github.com/ikeikeikeike/beego-samples/auth/lib"
-	"github.com/ikeikeikeike/beego-samples/auth/models"
+	"github.com/uxff/beego-samples/auth/lib"
+	"github.com/uxff/beego-samples/auth/models"
 )
 
 type LoginController struct {
@@ -16,12 +16,12 @@ type LoginController struct {
 func (c *LoginController) Login() {
 
 	if c.IsLogin {
-		c.Ctx.Redirect(302, c.UrlFor("UsersController.Index"))
+		c.Ctx.Redirect(302, c.URLFor("UsersController.Index"))
 		return
 	}
 
-	c.TplNames = "login/login.tpl"
-	c.Data["xsrfdata"] = template.HTML(c.XsrfFormHtml())
+	c.TplName = "login/login.tpl"
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 
 	if !c.Ctx.Input.IsPost() {
 		return
@@ -43,7 +43,7 @@ func (c *LoginController) Login() {
 
 	c.SetLogin(user)
 
-	c.Redirect(c.UrlFor("UsersController.Index"), 303)
+	c.Redirect(c.URLFor("UsersController.Index"), 303)
 }
 
 func (c *LoginController) Logout() {
@@ -52,12 +52,12 @@ func (c *LoginController) Logout() {
 	flash.Success("Success logged out")
 	flash.Store(&c.Controller)
 
-	c.Ctx.Redirect(302, c.UrlFor("LoginController.Login"))
+	c.Ctx.Redirect(302, c.URLFor("LoginController.Login"))
 }
 
 func (c *LoginController) Signup() {
-	c.TplNames = "login/signup.tpl"
-	c.Data["xsrfdata"] = template.HTML(c.XsrfFormHtml())
+	c.TplName = "login/signup.tpl"
+	c.Data["xsrfdata"] = template.HTML(c.XSRFFormHTML())
 
 	if !c.Ctx.Input.IsPost() {
 		return
@@ -90,5 +90,5 @@ func (c *LoginController) Signup() {
 
 	c.SetLogin(u)
 
-	c.Redirect(c.UrlFor("UsersController.Index"), 303)
+	c.Redirect(c.URLFor("UsersController.Index"), 303)
 }

@@ -18,5 +18,5 @@ func (c *UsersController) NestPrepare() {
 func (c *UsersController) Index() {
 	beego.ReadFromRequest(&c.Controller)
 
-	c.TplNames = "users/index.tpl"
+	c.TplName = "users/index.tpl"
 }

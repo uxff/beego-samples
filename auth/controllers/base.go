@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/astaxie/beego"
-	"github.com/ikeikeikeike/beego-samples/auth/models"
 	"github.com/ikeikeikeike/gopkg/convert"
+	"github.com/uxff/beego-samples/auth/models"
 )
 
 type BaseController struct {
@@ -68,7 +68,7 @@ func (c *BaseController) SetLogin(user *models.User) {
 }
 
 func (c *BaseController) LoginPath() string {
-	return c.UrlFor("LoginController.Login")
+	return c.URLFor("LoginController.Login")
 }
 
 func (c *BaseController) SetParams() {
@@ -80,7 +80,7 @@ func (c *BaseController) SetParams() {
 
 func (c *BaseController) BuildRequestUrl(uri string) string {
 	if uri == "" {
-		uri = c.Ctx.Input.Uri()
+		uri = c.Ctx.Input.URI()
 	}
 	return fmt.Sprintf("%s:%s%s",
 		c.Ctx.Input.Site(), convert.ToStr(c.Ctx.Input.Port()), uri)

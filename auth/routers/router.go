@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	ctl "github.com/ikeikeikeike/beego-samples/auth/controllers"
+	ctl "github.com/uxff/beego-samples/auth/controllers"
 )
 
 func init() {
