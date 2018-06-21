@@ -31,6 +31,8 @@ func (c *BaseController) Prepare() {
 		c.Userinfo = c.GetLogin()
 	}
 
+	c.Data["appname"] = beego.AppConfig.String("appname")
+
 	c.Data["IsLogin"] = c.IsLogin
 	c.Data["Userinfo"] = c.Userinfo
 

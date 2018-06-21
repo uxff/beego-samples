@@ -2,12 +2,12 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	ctl "github.com/uxff/beego-samples/auth/controllers"
+	"github.com/uxff/beego-samples/auth/controllers"
 )
 
 func init() {
-	beego.Router("/", &ctl.UsersController{}, "get:Index")
-	beego.Router("/login", &ctl.LoginController{}, "get,post:Login")
-	beego.Router("/logout", &ctl.LoginController{}, "get:Logout")
-	beego.Router("/signup", &ctl.LoginController{}, "get,post:Signup")
+	beego.Router("/", &controllers.UsersController{}, "get:Index")
+	beego.Router("/login", &controllers.LoginController{}, "get,post:Login")
+	beego.Router("/logout", &controllers.LoginController{}, "get:Logout")
+	beego.Router("/signup", &controllers.LoginController{}, "get,post:Signup")
 }
