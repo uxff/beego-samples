@@ -6,7 +6,7 @@
     	<div class="col-md-6 col-md-offset-3">
     		<div class="panel panel-default">
 			  	<div class="panel-heading text-center">
-			    	<h3 class="panel-title"><strong>Login</strong></h3>
+			    	<h3 class="panel-title"><strong>登录</strong></h3>
 			 	</div> 
 
 			  	<div class="panel-body">
@@ -16,31 +16,32 @@
                       {{template "alert.tpl" .}}
 
                       <div class="form-group">
-                        <label for="inputEmail" class="col-sm-3 control-label">メールアドレス</label>
+                        <label for="inputEmail" class="col-sm-3 control-label">邮箱地址</label>
                         <div class="col-sm-9">
                           <input class="form-control" placeholder="例: admin@example.com" name="Email" value="{{index .Params "Email"}}" type="email" required 
                                     id="inputEmail" />
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="col-sm-3 control-label">パスワード</label>
+                        <label for="inputPassword" class="col-sm-3 control-label">秘钥</label>
                         <div class="col-sm-9">
-			    		  <input class="form-control" placeholder="パスワードを入力" name="Password" type="password" value="" required 
-                                    pattern=".{6,}" title="パスワードは6文字以上を入力してください" id="inputPassword"  />
+			    		  <input class="form-control" placeholder="输入秘钥" name="Password" type="password" value="" required
+                                    pattern=".{6,}" title="密码长度至少为6个字符" id="inputPassword"  />
                         </div>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group text-center">
                         <div class="col-sm-12">
-			    		    <input class="btn btn-lg btn-success" type="submit" value="ログイン"> 
-                            <a href="{{urlfor "LoginController.PasswordReset"}}"> 
-                                パスワードを忘れた場合はこちら »
+			    		  <input class="btn btn-lg btn-success btn-block" type="submit" value="登录">
+                            <a href="{{urlfor "LoginController.PasswordReset"}}">
+                                忘记秘钥，请点击此处 »
                             </a>
+
                         </div>
                       </div>
                     </form>
 			    </div>
 
-                <div class="panel-footer text-center clearfix">アカウントをお持ちではない場合は <a href='{{urlfor "LoginController.Signup"}}'>新規登録 »</a></div>
+                <div class="panel-footer text-center clearfix">没有账户 <a href='{{urlfor "LoginController.Signup"}}'>注册 »</a></div>
 
 			</div>
 		</div>

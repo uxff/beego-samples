@@ -6,7 +6,7 @@
     	<div class="col-md-6 col-md-offset-3">
     		<div class="panel panel-default">
 			  	<div class="panel-heading text-center">
-			    	<h3 class="panel-title"><strong>Signup</strong></h3>
+			    	<h3 class="panel-title"><strong>注册</strong></h3>
 			 	</div> 
 
 			  	<div class="panel-body">
@@ -16,30 +16,33 @@
                       {{template "alert.tpl" .}}
 
                       <div class="form-group">
-                        <label for="inputEmail" class="col-sm-3 control-label">メールアドレス</label>
-                        <div class="col-sm-9">
+                        <label for="inputEmail" class="col-sm-3 control-label">邮箱地址</label>
+                        <div class="col-sm-8">
                           <input class="form-control" placeholder="例: admin@example.com" name="Email" value="{{index .Params "Email"}}" type="email" required 
                                     id="inputEmail" />
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="col-sm-3 control-label">パスワード</label>
-                        <div class="col-sm-9">
-			    		  <input class="form-control" placeholder="パスワードを入力" name="Password" type="password" value="" required 
-                                    pattern=".{6,}" title="パスワードは6文字以上を入力してください" id="inputPassword"  />
-                          <input class="form-control" placeholder="パスワードの確認" name="Repassword" type="password" required 
-                                    pattern=".{6,}" title="パスワードは6文字以上を入力してください" />
+                        <label for="inputPassword" class="col-sm-3 control-label">秘钥</label>
+                        <div class="col-sm-8">
+			    		  <input class="form-control" placeholder="输入秘钥" name="Password" type="password" value="" required
+                                    pattern=".{6,}" title="秘钥长度至少为6个字符" id="inputPassword"  />
+                          <input class="form-control" placeholder="确认秘钥" name="Repassword" type="password" required
+                                    pattern=".{6,}" title="秘钥长度至少为6个字符" />
                         </div>
+                      </div>
+                      <div class="form-group text-center">
+                          <lable for="isCheckedProtocol"><input type="checkbox" id="isCheckedProtocol"/>我同意<a href="javascript:;">注册协议</a></lable>
                       </div>
                       <div class="form-group">
                         <div class="col-sm-12">
-			    		    <input class="btn btn-lg btn-success btn-block" type="submit" value="登録する">
+			    		    <input class="btn btn-lg btn-success btn-block" type="submit" value="注册">
                         </div>
                       </div>
                     </form>
 			    </div>
 
-                <div class="panel-footer text-center clearfix">アカウントをお持ちの場合は <a href='{{urlfor "LoginController.Login"}}'>ログイン »</a></div>
+                <div class="panel-footer text-center clearfix">如果您已有账号 <a href='{{urlfor "LoginController.Login"}}'>登录 »</a></div>
 
 			</div>
 		</div>
