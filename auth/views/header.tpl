@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a style="font-size: 14px;" class="navbar-brand" rel="home" href="/" >
-        <strong>Ref</strong>
+        <strong>Channel</strong>
       </a>
     </div>
 
@@ -33,11 +33,11 @@
           <ul itemprop="name" class="dropdown-menu">
             {{if .IsLogin}}
                 <li itemprop="name" ><a itemprop="url" href='{{urlfor "LoginController.Logout"}}'>
-                  <span class='glyphicon glyphicon-bullhorn'></span> Logout
+                  <span class='glyphicon glyphicon-log-out'></span> 退出
                 </a></li>
             {{else}}
                 <li itemprop="name" ><a itemprop="url" href='{{urlfor "LoginController.Login"}}'>
-                  <span class='glyphicon glyphicon-globe'></span> Login
+                  <span class='glyphicon glyphicon-globe'></span> 登录
                 </a></li>
             {{end}}
           </ul>

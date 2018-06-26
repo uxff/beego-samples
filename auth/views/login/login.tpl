@@ -17,14 +17,14 @@
 
                       <div class="form-group">
                         <label for="inputEmail" class="col-sm-3 control-label">邮箱地址</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-8">
                           <input class="form-control" placeholder="例: admin@example.com" name="Email" value="{{index .Params "Email"}}" type="email" required 
                                     id="inputEmail" />
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputPassword" class="col-sm-3 control-label">秘钥</label>
-                        <div class="col-sm-9">
+                        <div class="col-sm-8">
 			    		  <input class="form-control" placeholder="输入秘钥" name="Password" type="password" value="" required
                                     pattern=".{6,}" title="密码长度至少为6个字符" id="inputPassword"  />
                         </div>
