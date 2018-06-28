@@ -93,6 +93,7 @@ func (c *LoginController) Signup() {
 	}
 
 	u.Lastlogintime = time.Unix(0, 0)
+	u.EmailActivated = time.Time{}
 	id, err := lib.SignupUser(u)
 	if err != nil || id < 1 {
 		flash.Warning(err.Error())

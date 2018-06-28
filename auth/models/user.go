@@ -17,7 +17,7 @@ type User struct {
 	Created       time.Time `orm:"auto_now_add;type(datetime)"`
 	Updated       time.Time `orm:"auto_now;type(datetime)"`
 	IsEmailActivated bool
-	EmailActivated time.Time `orm:"type(datetime);"`
+	EmailActivated time.Time `orm:"type(datetime)"`
 }
 
 func (u *User) Valid(v *validation.Validation) {
