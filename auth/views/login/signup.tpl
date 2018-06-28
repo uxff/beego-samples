@@ -31,6 +31,13 @@
                                     pattern=".{6,}" title="秘钥长度至少为6个字符" />
                         </div>
                       </div>
+                      <div class="form-group">
+                          <label for="inputCaptcha" class="col-sm-3 control-label">验证码</label>
+                          <div class="col-sm-4">
+                              <input class="form-control" name="captcha" type="text">
+                          </div>
+                      {{create_captcha}}
+                      </div>
                       <div class="form-group text-center">
                           <lable for="isCheckedProtocol"><input type="checkbox" id="isCheckedProtocol"/>我同意<a href="javascript:;">注册协议</a></lable>
                       </div>

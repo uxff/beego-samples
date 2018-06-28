@@ -29,6 +29,13 @@ func (c *LoginController) Login() {
 	}
 
 	flash := beego.NewFlash()
+
+	if !TheCaptcha.VerifyReq(c.Ctx.Request) {
+		flash.Warning("验证码错误")
+		flash.Store(&c.Controller)
+		return
+	}
+
 	email := c.GetString("Email")
 	password := c.GetString("Password")
 
@@ -66,6 +73,12 @@ func (c *LoginController) Signup() {
 
 	var err error
 	flash := beego.NewFlash()
+
+	if !TheCaptcha.VerifyReq(c.Ctx.Request) {
+		flash.Warning("验证码错误")
+		flash.Store(&c.Controller)
+		return
+	}
 
 	u := &models.User{}
 	if err = c.ParseForm(u); err != nil {

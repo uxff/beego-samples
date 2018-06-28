@@ -29,6 +29,13 @@
                                     pattern=".{6,}" title="密码长度至少为6个字符" id="inputPassword"  />
                         </div>
                       </div>
+                      <div class="form-group">
+                          <label for="inputCaptcha" class="col-sm-3 control-label">验证码</label>
+                          <div class="col-sm-4">
+                            <input class="form-control" name="captcha" type="text">
+                          </div>
+                        {{create_captcha}}
+                      </div>
                       <div class="form-group text-center">
                         <div class="col-sm-12">
 			    		  <input class="btn btn-lg btn-success btn-block" type="submit" value="登录">

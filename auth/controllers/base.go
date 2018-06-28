@@ -6,13 +6,30 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/ikeikeikeike/gopkg/convert"
 	"github.com/uxff/beego-samples/auth/models"
+	"github.com/astaxie/beego/cache"
+	"github.com/astaxie/beego/utils/captcha"
 )
+
+// 初始化captcha
+var TheStore cache.Cache
+var TheCaptcha *captcha.Captcha
+
+func init() {
+	TheStore = cache.NewMemoryCache()
+	TheCaptcha = captcha.NewWithFilter("/captcha/", TheStore) //一定要写在构造函数里面，要不然第一次打开页面有可能是X
+	TheCaptcha.StdHeight = 40
+	TheCaptcha.StdWidth = 100
+	TheCaptcha.ChallengeNums = 4
+}
 
 type BaseController struct {
 	beego.Controller
 
-	Userinfo *models.User
-	IsLogin  bool
+	Userinfo   *models.User
+	IsLogin    bool
+
+	theStore   cache.Cache
+	theCaptcha *captcha.Captcha
 }
 
 type NestPreparer interface {
@@ -23,6 +40,7 @@ type NestFinisher interface {
 	NestFinish()
 }
 
+// every request will call this
 func (c *BaseController) Prepare() {
 	c.SetParams()
 
