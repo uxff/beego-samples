@@ -18,6 +18,9 @@ type User struct {
 	Updated       time.Time `orm:"auto_now;type(datetime)"`
 	IsEmailActivated bool
 	EmailActivated time.Time `orm:"type(datetime)"`
+	Lastloginip string `orm:"size(16)"`
+	Phone string `orm:"size(16)"`
+	Nickname string `orm:"size(20)"`
 }
 
 func (u *User) Valid(v *validation.Validation) {
