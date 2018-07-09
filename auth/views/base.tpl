@@ -22,6 +22,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="/static/bower/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="/static/js/twitter-bootstrap-hover-dropdown.min.js"></script>
   {{range .HeadScripts}}
       <script src="{{.}}"></script>
   {{end}}
