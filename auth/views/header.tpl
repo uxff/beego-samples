@@ -44,11 +44,11 @@
           <ul itemprop="name" class="dropdown-menu">
             {{if .IsLogin}}
                 <li itemprop="name" ><a itemprop="url" href='{{urlfor "LoginController.Logout"}}'>
-                  <span class='glyphicon glyphicon-log-out'></span> 退出
+                  <span class='glyphicon glyphicon-log-out'></span> Logout
                 </a></li>
             {{else}}
                 <li itemprop="name" ><a itemprop="url" href='{{urlfor "LoginController.Login"}}'>
-                  <span class='glyphicon glyphicon-globe'></span> 登录
+                  <span class='glyphicon glyphicon-globe'></span> Login
                 </a></li>
             {{end}}
           </ul>
